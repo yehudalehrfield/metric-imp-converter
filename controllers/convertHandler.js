@@ -51,8 +51,6 @@ function ConvertHandler() {
     const miToKm = 1.60934;
     let conversionFactor = 0;
 
-    if (!initNum) return 'invalid number';
-    if (!initUnit) return 'invalid unit';
     switch (initUnit.toLowerCase()) {
       case 'gal': 
         conversionFactor = galToL;
