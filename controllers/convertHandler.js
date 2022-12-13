@@ -12,7 +12,7 @@ function ConvertHandler() {
   let unitsFull = {
     'mi': 'miles',
     'gal': 'gallons',
-    'lbs': 'kilograms',
+    'lbs': 'pounds',
     'km': 'kilometers',
     'l': 'liters',
     'kg': 'kilograms'
@@ -26,7 +26,7 @@ function ConvertHandler() {
     let numInputArr = rawNumInput.split('/');
     // Checks: 
     // 1. more than two elems - invalid (null)
-    // 2. one elem - check if empty (1) or invalid (null)
+    // 2. one elem - check if empty (value = 1) or zero (null) or invalid (null)
     // 3. two elems - check validity of both elems and perform division
     if (numInputArr.length > 2) {
       return null
