@@ -2,10 +2,10 @@ function ConvertHandler() {
   
   let units = {
     'mi': 'km',
-    'gal': 'l',
+    'gal': 'L',
     'lbs': 'kg',
     'km': 'mi',
-    'l': 'gal',
+    'L': 'gal',
     'kg': 'lbs'
   }
   // maybe combine the two objects into one - key: unit, value: [full unit, return/conversion full unit]
@@ -14,7 +14,7 @@ function ConvertHandler() {
     'gal': 'gallons',
     'lbs': 'pounds',
     'km': 'kilometers',
-    'l': 'liters',
+    'L': 'liters',
     'kg': 'kilograms'
   }
   
@@ -42,9 +42,10 @@ function ConvertHandler() {
   };
   
   this.getUnit = function(input) {
-    const unitRegex = /\D+$/ //get unit from right of string after (optional) digits
-    if (!unitRegex.test(input)) return null;
-    let result = input.match(unitRegex)[0].toLowerCase(); 
+    const unitRegex = /\D+$/ //get substring from right of string after (optional) digits
+    if (!unitRegex.test(input)) return null; // if no unit, return null
+    let result = input.match(unitRegex)[0].toLowerCase(); //convert input string to lower case
+    result = (result == 'l') ? 'L' : result; // convert liter to 'L' instead of 'l'
     // return null if invalid unit 
     return (units.hasOwnProperty(result)) ? result : null; 
   };
