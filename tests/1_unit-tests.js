@@ -49,7 +49,6 @@ suite('Unit Tests', function(){
       done();
     });
     test('Invalid input units', (done) => {
-      // let validUnits = ['mi', 'km', 'lbs', 'kg', 'gal', 'l'];
       let input = '123g'
       assert.equal(convertHandler.getUnit(input), null);
       done();
@@ -82,66 +81,42 @@ suite('Unit Tests', function(){
       let input = 'gal'
       let num = convertHandler.getNum(input);
       let unit = convertHandler.getUnit(input);
-      assert.equal(
-        convertHandler.convert(num,unit),
-        3.78541
-      );
-      // assert.equal((convertHandler.convert(convertHandler.getNum(input),convertHandler.getUnit(input)),3.78541))
+      assert.equal(convertHandler.convert(num,unit), 3.78541);
       done();
     });
     test('L to gal', (done) => {
       let input = 'L';
       let num = convertHandler.getNum(input);
       let unit = convertHandler.getUnit(input);
-      assert.equal(
-        convertHandler.convert(num,unit),
-        0.26417
-      );
-      // assert.equal((convertHandler.convert(convertHandler.getNum(input),convertHandler.getUnit(input)),0.26417))
+      assert.equal(convertHandler.convert(num,unit), 0.26417);
       done();
     });
     test('mi to km', (done) => {
       let input = 'mi';
       let num = convertHandler.getNum(input);
       let unit = convertHandler.getUnit(input);
-      assert.equal(
-        convertHandler.convert(num,unit),
-        1.60934
-      );
-      // assert.equal((convertHandler.convert(convertHandler.getNum(input),convertHandler.getUnit(input)),1.60934))
+      assert.equal(convertHandler.convert(num,unit), 1.60934);
       done();
     });
     test('km to mi', (done) => {
       let input = 'km';
       let num = convertHandler.getNum(input);
       let unit = convertHandler.getUnit(input);
-      assert.equal(
-        convertHandler.convert(num,unit),
-        0.62137
-      );
-      // assert.equal((convertHandler.convert(convertHandler.getNum(input),convertHandler.getUnit(input)),0.62137))
+      assert.equal(convertHandler.convert(num,unit), 0.62137);
       done();
     });
     test('lbs to kg', (done) => {
       let input = 'lbs';
       let num = convertHandler.getNum(input);
       let unit = convertHandler.getUnit(input);
-      assert.equal(
-        convertHandler.convert(num,unit),
-        0.45359
-      );
-      // assert.equal((convertHandler.convert(convertHandler.getNum(input),convertHandler.getUnit(input)),0.45359))
+      assert.equal(convertHandler.convert(num,unit), 0.45359);
       done();
     });
     test('kg to lbs', (done) => {
       let input = 'kg';
       let num = convertHandler.getNum(input);
       let unit = convertHandler.getUnit(input);
-      assert.equal(
-        convertHandler.convert(num,unit),
-        2.20462
-      );
-      // assert.equal((convertHandler.convert(convertHandler.getNum(input),convertHandler.getUnit(input)),2.20462))
+      assert.equal(convertHandler.convert(num,unit), 2.20462);
       done();
     });
 
