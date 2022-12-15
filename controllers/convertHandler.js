@@ -38,7 +38,7 @@ function ConvertHandler() {
       let validDenom = !isNaN(numInputArr[1])
       result = (!validNumer || !validDenom) ? null : (numInputArr[0]/numInputArr[1]).toFixed(5);
     }
-    return result;
+    return Number(result);
   };
   
   this.getUnit = function(input) {
@@ -97,7 +97,7 @@ function ConvertHandler() {
     // perform conversion
     let result = initNum*conversionFactor;
     
-    return result.toFixed(5);
+    return Number(result.toFixed(5));
   };
   
   this.getString = function(initNum, initUnit, returnNum, returnUnit) {
